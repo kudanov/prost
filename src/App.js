@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import logo from './assets/logo.svg';
 import './App.css';
 import NavPanel from './components/NavPanel';
 import MailList from './components/MailList';
@@ -6,7 +6,7 @@ import MailContent from './components/MailContent';
 import {createStore} from './utils/Store'
 
 const store = createStore()
-setInterval(()=>store.setHeader("Заголовок с секундами " + (new Date()).getSeconds()), 1000)
+setInterval(() => store.setHeader("Заголовок с секундами " + (new Date()).getSeconds()), 1000)
 
 function App() {
   return (
