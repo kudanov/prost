@@ -1,7 +1,7 @@
 import {createComputed, createState} from 'solid-js'
 
-const BTN_TEXT = "Create",
-    MIN_BTN_TEXT = "+";
+const BTN_TEXT = "Create";
+const MIN_BTN_TEXT = "+";
 
 const SearchPanel = () => {
     const [state, setState] = createState({
