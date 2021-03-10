@@ -6,15 +6,32 @@ const
     DEF_HEADER = "Заголовок",
     DEF_BODY = "Тело письма";
 
-function getMailHeader(){
-    return DEF_HEADER + " " + LOREM_IPSUM.slice(0, 10);
+function getMailHeader(index){
+    return DEF_HEADER + " " + index ?? "" + " " + LOREM_IPSUM.slice(0, index ?? 10);
 }
 
-function getMailBody(){
-    return DEF_BODY + " " + LOREM_IPSUM.repeat(100);
+function getMailBody(repeatCount){
+    return DEF_BODY + " "  + (repeatCount ?? "") + " " + LOREM_IPSUM.repeat(repeatCount ?? 100);
 }
 
-const createDefault = () => ({header: getMailHeader(), body: getMailBody()});
+export function getRandomIntInclusive(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
+}
+
+export function genMailList(count){
+    let a = [];
+    for (let i = 0; i < count; i++) {
+        a.push({id:i, header: getMailHeader(i), body: getMailBody(getRandomIntInclusive(0, i))})
+    }
+    return a;
+}
+
+const createDefault = () => ({
+    mails: genMailList(11),
+    activeMail: {},
+});
 
 export const createStore = () => {
     const [state, setState] = createState(createDefault())
@@ -22,7 +39,7 @@ export const createStore = () => {
     return {
         state,
         reset: () => setState(createDefault()),
-        setHeader: h => setState("header", h),
-        setBody: b => setState("body", b)
+        setMails: ml => setState("mails", ml),
+        setActiveMail: m => setState("activeMail", m)
     }
 }
