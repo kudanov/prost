@@ -1,0 +1,43 @@
+{
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "cross-env": "^7.0.3",
+    "electron": "^11.2.3",
+    "electron-builder": "^22.9.1",
+    "postcss-cli": "^8.3.1",
+    "solid-scripts": "0.0.52",
+    "wait-on": "^5.2.1"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.2.4",
+    "electron-is-dev": "^1.2.0",
+    "postcss": "^8.2.6",
+    "solid-js": "^0.24.5",
+    "tailwindcss": "^2.0.3"
+  },
+  "scripts": {
+    "solid-start": "solid-scripts start",
+    "solid-build": "solid-scripts build",
+    "solid-test": "solid-scripts test",
+    "electron-build": "electron-builder",
+    "release": "yarn solid-build && electron-builder --publish=always",
+    "build": "yarn solid-build && yarn electron-build",
+    "start": "concurrently \"cross-env BROWSER=none npm run solid-start\" \"wait-on http://localhost:3000 && electron .\""
+  },
+  "browserslist": [
+    "Chrome 74",
+    "Firefox 63",
+    "Safari 11",
+    "Edge 17",
+    "Node 10"
+  ],
+  "main": "public/electron.js",
+  "homepage": "./",
+  "build": {
+    "appId": "com.electron.${name}",
+    "extends": "react-cra"
+  }
+}

@@ -1,0 +1,78 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.22.10/libexec/bin/yarn.js build
+
+PATH: 
+  /Users/drago/.rvm/gems/ruby-head/bin:/Users/drago/.rvm/gems/ruby-head@global/bin:/Users/drago/.rvm/rubies/ruby-head/bin:/Library/Frameworks/Python.framework/Versions/3.8/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/Users/drago/.rvm/bin
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  14.15.1
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/drago/Documents/Sources/simple-solid-electron/my-app/package.json: Unexpected token / in JSON at position 834
+      at JSON.parse (<anonymous>)
+      at /usr/local/Cellar/yarn/1.22.10/libexec/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/Cellar/yarn/1.22.10/libexec/lib/cli.js:310:30)
+      at /usr/local/Cellar/yarn/1.22.10/libexec/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "my-app",
+    "version": "0.1.0",
+    "private": true,
+    "devDependencies": {
+      "concurrently": "^5.3.0",
+      "cross-env": "^7.0.3",
+      "electron": "^11.2.3",
+      "electron-builder": "^22.9.1",
+      "solid-scripts": "0.0.52",
+      "wait-on": "^5.2.1"
+    },
+    "dependencies": {
+      "electron-is-dev": "^1.2.0",
+      "solid-js": "^0.24.5"
+    },
+    "scripts": {
+      "solid-start": "solid-scripts start",
+      "solid-build": "solid-scripts build",
+      "solid-test": "solid-scripts test",
+      "electron-dev": "concurrently \"BROWSER=none npm start\" \"wait-on http://localhost:3000 && electron .\"",
+      "electron-build": "electron-builder",
+      "electron-pack": "build --em.main=build/electron.js",
+      "release": "npm run solid-build && electron-builder --publish=always",
+      "build": "yarn solid-build && yarn electron-build",
+      // "build": "npm run solid-build && npm run electron-build",
+      "start": "concurrently \"cross-env BROWSER=none npm run solid-start\" \"wait-on http://localhost:3000 && electron .\""
+    },
+    "browserslist": [
+      "Chrome 74",
+      "Firefox 63",
+      "Safari 11",
+      "Edge 17",
+      "Node 10"
+    ],
+    "main": "public/electron.js",
+    "homepage": "./",
+    "build": {
+      "appId": "com.example.simple-solid-electron",
+      "files": [
+        "build/**/*",
+        "node_modules/**/*"
+      ],
+      "directories":{
+        "buildResources": "assets"
+      }
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
