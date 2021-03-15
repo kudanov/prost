@@ -2,6 +2,7 @@ import logo from './assets/logo.svg';
 import './App.css';
 import NavPanel from './components/NavPanel';
 import MailList from './components/MailList';
+import MailBar from './components/MailBar';
 import MailContent from './components/MailContent';
 import {createStore} from './utils/Store'
 
