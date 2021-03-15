@@ -3,7 +3,7 @@ import {createSignal} from 'solid-js'
 const BTN_TEXT = "Create";
 const MIN_BTN_TEXT = "+";
 
-const SearchPanel = () => {
+const SearchPanel = ({ store }) => {
     const [isActive, setActive] = createSignal(false);
 
     return (
@@ -17,7 +17,7 @@ const SearchPanel = () => {
                     onfocus={() => setActive(true)} 
                     onblur={(e) => setActive(e.target.value)} />
             </div>
-            <div class="text-xl my-2">Inbox</div>
+            <div class="text-xl my-2">{store.state.mailBox}</div>
         </div>
     );
 };

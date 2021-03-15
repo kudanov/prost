@@ -6,7 +6,7 @@ const SvgButton = ({ path, svgClasses, onClick }) => {
     };
 
     return (
-        <a class="btn" href="#">
+        <a class="btn" href="#" onClick={onClick}>
             <svg class={(svgClasses ?? DEFAULT_CLASSES) + " stroke-1"} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 {Array.isArray(path)
                     ? path.map(d => formatPath(d))
