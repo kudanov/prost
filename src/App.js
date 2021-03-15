@@ -11,7 +11,7 @@ const store = createStore()
 
 function App() {
   return (
-    <div class="h-screen bg-gray-100 p-3 flex flex-row">
+    <div class="flex flex-row h-screen">
       <NavPanel />
       <MailList store = {store}/>
       <MailContent activeMail = {store.state.activeMail} />
