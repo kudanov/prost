@@ -15,6 +15,8 @@ function createWindow() {
   mainWindow = new BrowserWindow({
     width: 900,
     height: 680,
+    minWidth: 600,
+    autoHideMenuBar: true,
     webPreferences: {
       devTools: isDev
     }
