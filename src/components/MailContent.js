@@ -1,9 +1,12 @@
+import MailBar from "./MailBar";
+
 const MailContent = ({activeMail}) => {
   return (
-    <div class="bg-red-200 w-full flex flex-col relative">
-      <div class="overflow-auto">
-      <div class="h-12 sticky top-0 bg-red-300">{activeMail.header}</div>
-      <p>{activeMail.body}</p>
+    <div class="w-full flex flex-col relative px-6 pt-4">
+      <MailBar />
+      <div class="overflow-auto mt-2">
+        <div class="sticky top-0 bg-white truncate text-xl pb-2 border-b border-gray-200">{activeMail.header}</div>
+        <p>{activeMail.body}</p>
       </div>
     </div>
   );

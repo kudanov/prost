@@ -1,7 +1,11 @@
 {
   "name": "prost",
+  "description": "Simple mail app",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "Mikhail Kudanov"
+  },
   "devDependencies": {
     "concurrently": "^5.3.0",
     "cross-env": "^7.0.3",
@@ -38,6 +42,10 @@
   "homepage": "./",
   "build": {
     "appId": "com.electron.${name}",
-    "extends": "react-cra"
+    "extends": "react-cra",
+    "win": {
+      "target": "portable"
+    }
+    
   }
 }
