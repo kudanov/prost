@@ -7,7 +7,6 @@ import {createStore, genMailList, getRandomIntInclusive} from './utils/Store'
 
 const store = createStore()
 // setInterval(() => store.setMails(genMailList(getRandomIntInclusive(0, 100))), 3000)
-// setInterval(() => store.setHeader("Заголовок с секундами " + (new Date()).getSeconds()), 1000)
 // setInterval(() => store.setActiveMail(store.state.mails[1]), 3000)
 
 function App() {
