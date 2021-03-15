@@ -1,22 +1,5 @@
 import style from './style.css'
-
-const SvgButton = ({path}) => {
-    
-    function formatPath(d) {
-        return <path strokeLinecap="round" strokeLinejoin="round" d={d} />;
-    };
-
-    return (
-        <a class="btn" href="#">
-            <svg class="w-8 h-8 stroke-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                { Array.isArray(path)
-                    ? path.map(d => formatPath(d)) 
-                    : formatPath(path)
-                    }
-            </svg>
-        </a>
-    );
-};
+import SvgButton from '../SvgButton';
 
 const NavPanel = () => (
     <>
