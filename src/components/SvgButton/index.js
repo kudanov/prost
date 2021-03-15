@@ -1,4 +1,4 @@
-const SvgButton = ({ path, svgClasses, aClasses: divClasses, onClick, fill }) => {
+const SvgButton = ({ path, svgClasses, divClasses, onClick, fill }) => {
     
     const DEFAULT_SVG_CLASSES = "h-8 m-3";
     const DEFAULT_A_CLASSES = "text-gray-400 hover:text-gray-100";

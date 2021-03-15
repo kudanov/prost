@@ -41,7 +41,7 @@
   "main": "public/electron.js",
   "homepage": "./",
   "build": {
-    "appId": "com.electron.prost",
+    "appId": "com.electron.${name}",
     "extends": "react-cra",
     "win": {
       "target": "portable"
